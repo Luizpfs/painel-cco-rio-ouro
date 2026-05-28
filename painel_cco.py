@@ -4,6 +4,13 @@ import sqlite3
 import plotly.express as px
 
 st.set_page_config(page_title="Painel CCO - Rio Ouro", page_icon="🚌", layout="wide")
+senha = st.sidebar.text_input("🔑 Senha de Acesso Executivo:", type="password")
+
+# Troque "Diretoria2026" pela senha que você quiser dar ao seu chefe
+if senha != "CCO0422":
+    st.title("🔒 Acesso Restrito")
+    st.warning("⚠️ Por favor, insira a senha correta no menu lateral para visualizar os dados do CCO.")
+    st.stop() # O comando st.stop() é a mágica: ele proíbe o Python de ler o resto do código abaixo
 st.title("🚌 Centro de Inteligência Operacional - Viação Rio Ouro")
 st.markdown("---")
 
